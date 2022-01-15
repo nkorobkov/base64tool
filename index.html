@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Base64 URL</title>
+        <meta name="description" content="Convert between plaintext and base64 and base64url encoding">
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <div id="content">
+            <h1 id="title"><a href="https://base64.nkorobkov.com">base64 tool</a></h1>
+
+            <h3 id="subtitle">Transform strings between plain text and base64 <br>
+                <a id="copy-link">Get a link</a> with encoded content to share spoilers
+            </h3>
+            <h3 id="subtitle"></h3>
+            <div class="textarea-container">
+                <label for="plaintext" class="textarea-label">Plain Text</label>
+                <button type="button" id="copy-plain" class="btn">Copy</button>
+                <textarea id="plaintext" placeholder="Plain Text"></textarea>
+            </div>
+
+            <div class="textarea-container">
+                <label for="plaintext" class="textarea-label">Base 64 Encoding</label>
+                <button type="button" id="copy-base64" class="btn">Copy</button>
+                <textarea id="base64" placeholder="Base 64 Encoding"></textarea>
+            </div>
+
+            <div class="textarea-container">
+                <label for="plaintext" class="textarea-label">Base 64 URL Encoding</label>
+                <button type="button" id="copy-base64url" class="btn">Copy</button>
+                <textarea id="base64url" placeholder="Base 64 URL Encoding"></textarea>
+            </div>
+            
+            <div id="info">
+                <label class="subtitle">About Base64</label>
+                <p> 
+                    Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating
+                    it into a radix-64 representation. The term Base64 originates from a specific MIME content transfer encoding. Each base64
+                    digit represents exactly 6 bits of data.
+                </p>
+                <label class="subtitle">Design</label>
+                <p>
+                    The particular set of 64 characters chosen to represent the 64 place-values for the base varies between implementations.
+                    The general strategy is to choose 64 characters that are both members of a subset common to most encodings, and also printable.
+                    This combination leaves the data unlikely to be modified in transit through information systems, such as email, that were
+                    traditionally not 8-bit clean.
+                <p>
+                    For example, MIME's Base64 implementation uses A–Z, a–z, and 0–9 for the first 62 values. Other variations share this property
+                    but differ in the symbols chosen for the last two values; an example is UTF-7. The earliest instances of this type of encoding
+                    were created for dialup communication between systems running the same OS — e.g., uuencode for UNIX, BinHex for the TRS-80
+                    (later adapted for the Macintosh) — and could therefore make more assumptions about what characters were safe to use. For
+                    instance, uuencode uses uppercase letters, digits, and many punctuation characters, but no lowercase
+                </p>
+                <label class="subtitle">URL applications</label>
+                <p>
+                    Base64 encoding can be helpful when fairly lengthy identifying information is used in an HTTP environment.
+                    For example, a database persistence framework for Java objects might use Base64 encoding to encode a relatively large
+                    unique id (generally 128-bit UUIDs) into a string for use as an HTTP parameter in HTTP forms or HTTP GET URLs. Also,
+                    many applications need to encode binary data in a way that is convenient for inclusion in URLs, including in hidden web
+                    form fields, and Base64 is a convenient encoding to render them in a compact way.
+                <p>
+                    Using standard Base64 in URL requires
+                    encoding of '+', '/' and '=' characters into special percent-encoded hexadecimal sequences ('+' becomes '%2B', '/' becomes
+                    '%2F' and '=' becomes '%3D'), which makes the string unnecessarily longer. For this reason, modified Base64 for URL variants
+                    exist, where the '+' and '/' characters of standard Base64 are respectively replaced by '-' and '_', so that using URL
+                    encoders/decoders is no longer necessary and have no impact on the length of the encoded value, leaving the same encoded
+                    form intact for use in relational databases, web forms, and object identifiers in general.
+                <p>
+                    Some variants allow or require
+                    omitting the padding '=' signs to avoid them being confused with field separators, or require that any such padding be
+                    percent-encoded. Some libraries will encode '=' to '.'.
+                </p>
+                <p>
+                    Source: <a id="source" href="https://en.wikipedia.org/wiki/Base64" target="_blank">Wikipedia</a>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <span>The page was build based on </span>
+            <a href="https://base64url.com" class="link">base64url.com</a>
+            <span id="year">&copy;
+                <script>document.getElementById('year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+            </span>
+        </footer>
+    </body>
+
+    <script src="base64url.js"></script>
+</html>

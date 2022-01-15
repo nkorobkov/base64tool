@@ -1,0 +1,160 @@
+* { /* padding and border are included in the total width and height of the elements */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto,Trebuchet MS,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    background-image: url('res/body.png');
+}
+
+#content {
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+#title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#title a:link {
+    color: rgb(67, 94, 50);
+    text-decoration: none;
+}
+
+#subtitle a {
+    color: rgb(67, 94, 50);
+    text-decoration: underline;
+}
+
+#subtitle a:active {
+    color: rgb(213, 207, 33);
+    text-decoration: underline;
+}
+
+#title a:visited {
+    color: rgb(67, 94, 50);
+    text-decoration: none;
+}
+
+
+.btn {
+    float: right;
+    margin-bottom: 5px;
+    padding: 3px 6px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+}
+.textarea-label {
+    float: left;
+    margin-left: 6px;
+    font-size: 12px;
+    color: rgb(146, 145, 145);
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.textarea-container {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.textarea-container textarea {
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.20);
+    background-color: rgba(130, 189, 94, 0.3);
+    border: none;
+    resize: vertical;
+    height: 10em;
+}
+
+#source {
+    text-decoration: none;
+}
+
+#info {
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 12px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.subtitle {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+footer {
+    margin: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: gray;
+    font-size: 12px;
+}
+
+footer a:link {
+    text-decoration: none;
+}
+
+footer span {
+    color: gray;
+    font-size: 12px;
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+    #subtitle {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+    #info {
+        padding: 5px;
+        margin-top: 40px;
+        max-height: initial;
+    }
+    .textarea-label {
+        margin-left: 10px;
+    }
+    .btn {
+        margin-right: 8px;
+    }
+    .textarea-container {
+        display: block;
+        width: 100%;
+    }
+    .textarea-container textarea {
+        height: 5em;
+    }
+}
